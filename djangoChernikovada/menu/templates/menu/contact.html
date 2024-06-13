@@ -1,0 +1,62 @@
+{% extends 'menu/layout.html' %}
+{% load static %}
+
+{% block titles %}
+ <title>{{ title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="texter">
+    <h1>{{ title }}</h1>
+        <h2>О нас</h2>
+<h5>Команда студии дизайна NewWay – выходцы из топовых московских брендинговых агентств и дизайн-студий. Красавчики в сфере дизайна и брендинга.</h5>
+    <h2>Наша команда</h2>
+        </div>
+    <div class="container">
+  <div class="card">
+    <div class="card__header">
+      <img src="https://sun9-50.userapi.com/impg/kFc8Ad2VcmRQIhBqBM0DVXJ_y5BtEAwecYrwBw/eLRhXP2IRTA.jpg?size=736x736&quality=95&sign=be372e6eecc78b10915f04417d8057e3&type=album" class="card__image" width="350">
+    </div>
+    <div class="card__body">
+      <h4>Черникова Дарьяна</h4>
+        <h5 style="font-weight: bold">8 лет в product-менеджменте </h5>
+        <h6>– мама-основатель и первый номер нашего агентства</h6>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <img src="https://sun9-26.userapi.com/impg/n8twbcqgpL3NXqgMkKfJE4a-N4jsrtoSObTeLA/kfK6pq_uIP4.jpg?size=670x670&quality=95&sign=9fdb52747dcab6cbeff8eff18041814e&type=album" class="card__image" width="350">
+    </div>
+    <div class="card__body">
+      <h4>Маркова Натали</h4>
+      <h5 style="font-weight: bold">Портфолио 100+ проектов </h5>
+        <h6>– арт-директор, генератор креатива, может продать снег зимой</h6>
+</div>
+  </div>
+  <div class="card">
+    <div class="card__header">
+      <img src="https://sun9-14.userapi.com/impg/oakuY0fJ8sJyFy7oO0aAUXVajTZ5m2zUHZpEyQ/ZONoKMIpVAY.jpg?size=640x640&quality=95&sign=31ce24ef41938c6987f9450b8d661d69&type=album" class="card__image" width="350">
+    </div>
+    <div class="card__body">
+      <h4>Кулик Николь</h4>
+      <h5 style="font-weight: bold">200+ дизайн-кейсов</h5>
+    <h6>– ведущий дизайнер-сенсей, обладатель черного пояса по дизайну</h6>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nikol">
+<h4>E-mail:</h4>
+<h4 style="font-weight: bold">durka@newway.com</h4>
+<h3>+7 921 504-33-03</h3>
+<h5>Время работы:</h5>
+    <h5 style="font-weight: bold">пн-пт с 10.00 до 19.00,</h5>
+<h5 style="font-weight: bold">время московское</h5>
+<h5>ИП Черникова Дарьяна Сеуловна</h5>
+<h5>ИНН: 504718607603</h5>
+<h5>ОГРНИП: 323508100550766</h5>
+    <img src="{% static 'menu/img/loc.png' %}">
+</div>
+{% endblock %}

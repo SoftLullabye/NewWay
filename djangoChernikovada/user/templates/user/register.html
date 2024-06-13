@@ -1,0 +1,13 @@
+{% extends 'menu/layout.html' %}
+
+{% block content %}
+<div class="texter">
+    <h1>Регистрация</h1>
+<form action="." method="post">
+        {% csrf_token %}
+        {{ user_form.as_p }}
+    <span>{{ error }}</span>
+    <button class="btn btn-outline-warning" type="submit">Зарегестрироваться</button>
+</form>
+</div>
+{% endblock %}

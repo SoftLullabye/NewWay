@@ -1,0 +1,26 @@
+{% extends 'menu/layout.html' %}
+
+{% block titles %}
+ <title>Новости</title>
+{% endblock %}
+
+{% block content %}
+<div class="texter">
+<h1>Новости</h1>
+    {% if new %}
+    {% for el in new %}
+        <div style="margin: 20px; border-radius: 20px; background-color: #e18700; color: #171717; border-color: #e18700" class="alert alert-warning">
+            <h3>
+               {{ el.title }}
+            </h3>
+            <h6>{{ el.anons }}</h6>
+            <p>Автор: {{ p.author.username|default:"неизвестен" }}</p>
+        <a href="{% url 'news-detail' el.id %}" class="btn btn-outline-dark">Читать далее</a>
+        </div>
+    {% endfor %}
+{% else %}
+<h6>У вас нет записей!</h6>
+{% endif %}
+{# Комментарий #}
+</div>
+{% endblock %}

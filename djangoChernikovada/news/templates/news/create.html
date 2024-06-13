@@ -1,0 +1,20 @@
+{% extends 'menu/layout.html' %}
+
+{% block titles %}
+ <title>Создание статьи</title>
+{% endblock %}
+
+{% block content %}
+<div class="texter">
+<h1>Форма по добавлению статьи</h1>
+    </div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.title }}<br>
+    {{ form.anons }}<br>
+    {{ form.full_text }}<br>
+    {{ form.date }}<br>
+    <span>{{ error }}</span>
+<button class="btn btn-outline-warning" type="submit">Отправить</button>
+</form>
+{% endblock %}

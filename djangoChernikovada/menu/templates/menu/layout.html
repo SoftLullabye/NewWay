@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block titles %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'menu/css/menu.css' %}">
+</head>
+<body>
+<aside>
+    <header>
+        <img src="{% static 'menu/img/logo.png' %}">
+  <ul class="list">
+    <li><a href="{% url 'home' %}"><img style="width: 20%; height: 20px; margin-right: 3px; margin-bottom: 5px;" src="{% static 'menu/img/home.png' %}">Главная</a></li>
+    <li style="width: 150px"><a href="{% url 'newsfeed' %}"><img style="width: 15%; height: 20px; margin-right: 3px; margin-bottom: 5px;" src="{% static 'menu/img/feed.png' %}">Лента новостей</a></li>
+    <li><a href="{% url 'news' %}"><img style="width: 20%; height: 20px; margin-right: 3px; margin-bottom: 5px;" src="{% static 'menu/img/news.png' %}">Новости</a></li>
+    <li><a href="{% url 'contact' %}"><img style="width: 20%; height: 20px; margin-right: 3px; margin-bottom: 5px;" src="{% static 'menu/img/contact.png' %}">Контакты</a></li>
+    <li><a href="{% url 'create' %}"><button style="margin-top: -8px" class="btn btn-outline-warning"><i class="fas fa-plus-circle"></i>Добавить запись</button></a></li>
+  {% if user.is_authenticated %}
+                                <li class="last">{{ user.username }} | <a href="{% url 'user:logout' %}">Выйти</a> </li>
+                            {% else %}
+                                <li class="last"><a href="{% url 'user:login' %}">Вход</a> | <a href="{% url 'user:register' %}">Регистрация</a> </li>
+                            {% endif %}</ul>
+    </header>
+    </aside>
+{% block content %}
+{% endblock %}
+</body>
+<footer>
+                <div class="row row-2">
+                     <img style="width: 120px; height: 90px; margin-top: 30px" src="{% static 'menu/img/logo.png' %}">
+                    <div class="col-sm-3  my-sm-0 mt-5">
+                        <ul style="margin-top: 10px" class="list-unstyled">
+                            <li class="mt-0"><h2>Навигация</h2></li>
+                            <li><a href="{% url 'home' %}"><img style="width: 20px; height: 20px; margin-right: 10px; margin-bottom: 5px;" src="{% static 'menu/img/home.png' %}">Главная</a></li>
+                            <li><a href="{% url 'contact' %}"><img style="width: 20px; height: 20px; margin-right: 10px; margin-bottom: 5px;" src="{% static 'menu/img/contact.png' %}">Контакты</a></li>
+                            {% if user.is_authenticated %}
+                                <li class="last">{{ user.username }} | <a href="{% url 'user:logout' %}">Выйти</a> </li>
+                            {% else %}
+                                <li class="last"><a href="{% url 'user:login' %}">Вход</a> | <a href="{% url 'user:register' %}">Регистрация</a> </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row my-4 row-1 no-gutters">
+                    <div class="col-sm-3 col-auto text-center"><small>&#9400; Chernicova Project</small></div><div class="col-md-3 col-auto "></div><div class="col-md-3 col-auto"></div>
+                    <div class="col  my-auto text-md-left  text-right "> <small>info@newway.com</small>  </div>
+                </div>
+
+</footer>
+</html>

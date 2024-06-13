@@ -1,0 +1,16 @@
+{% extends 'menu/layout.html' %}
+
+{% block titles %}
+ <title>{{ article.title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="texter">
+<h1>{{ article.title }}</h1>
+    <h6>{{ article.date }}</h6>
+    <p>Автор: {{ p.author.username|default:"неизвестен" }}</p>
+<h6>{{ article.full_text }}</h6>
+    <a href="{% url 'news-update' article.id %}" class="btn btn-outline-warning">Редактировать</a>
+    <a href="{% url 'news-delete' article.id %}" class="btn btn-outline-danger">Удалить</a>
+</div>
+{% endblock %}
